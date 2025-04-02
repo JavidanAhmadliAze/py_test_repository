@@ -1,9 +1,7 @@
-def add(a:int,b:int):
-    return a+b
-
-
-def test_add():
-    assert add(4, 9) == 13
-    assert add(5, 6) == 11
-    assert add(10, 3) == 13
-
+import pytest
+@pytest.fixture
+def sample_data():
+ return {"name": "Alice", "age": 30}
+def test_sample_data(sample_data):
+ assert sample_data["name"] == "Alice"
+ assert sample_data["age"] == 30
